@@ -1,0 +1,45 @@
+name: Validate Part 1 Documentation
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  validate-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Check /docs folder exists
+        run: |
+          if [ ! -d "./docs" ]; then
+            echo "Error: /docs folder is missing!"
+            exit 1
+          fi
+          echo "✓ /docs folder exists"
+
+      - name: Check required files exist
+        run: |
+          if [ ! -f "./docs/API_Endpoint_Plan.md" ]; then
+            echo "Error: API_Endpoint_Plan.md is missing!"
+            exit 1
+          fi
+          if [ ! -f "./docs/RaceDay_Schema.sql" ]; then
+            echo "Error: RaceDay_Schema.sql is missing!"
+            exit 1
+          fi
+          echo "✓ API and SQL files exist"
+
+      - name: Check ERD file exists
+        run: |
+          if ! ls ./docs/ERD*.{png,pdf} 1> /dev/null 2>&1; then
+            echo "Error: ERD image/pdf is missing!"
+            exit 1
+          fi
+          echo "✓ ERD file exists"
+          
+      - name: Validation Complete
+        run: echo "All Part 1 documentation files are present! Validation successful."
