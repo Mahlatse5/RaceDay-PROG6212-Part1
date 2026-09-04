@@ -31,3 +31,12 @@ To set up the RaceDay database locally, follow these steps:
 4. Copy the entire contents of the script and paste it into a **New Query** window in SSMS.
 5. Click **Execute** (or press F5). The script will automatically create the `RaceDayDB` database, all required tables, constraints, and seed the database with realistic sample data.
 6. To verify the setup, expand the `RaceDayDB` database in the Object Explorer, right-click on the `dbo.Users` table, and select **Select Top 1000 Rows** to view the seeded Organisers and Participants.
+## CI/CD Build Status
+The repository uses GitHub Actions to validate the Part 1 documentation structure.
+![CI/CD Green Build](ERD-RaceDay.png.)
+
+## Video Presentation
+[Watch the Part 1 Video Presentation on YouTube](INSERT_YOUR_UNLISTED_YOUTUBE_LINK_HERE)
+
+## AI Usage Disclosure
+AI tools were utilized to assist in the initial planning and structuring of the database schema, generating templates for the API endpoint table, and drafting the GitHub Actions CI/CD workflow. All Entity Relationship Diagram (ERD) design, SQL script testing in SSMS, final documentation, and the video presentation were completed independently by the student.
