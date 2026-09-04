@@ -100,3 +100,4 @@ INSERT INTO Enrolments (ParticipantID, EventID, CategoryID, Status) VALUES
 (3, 1, 1, 'Confirmed'), -- John Doe in Comrades Open Men
 (4, 3, 5, 'Confirmed'); -- Naledi Dlamini in Soweto 10km Fun Run
 GO
+select * from Users;
