@@ -101,3 +101,20 @@ INSERT INTO Enrolments (ParticipantID, EventID, CategoryID, Status) VALUES
 (4, 3, 5, 'Confirmed'); -- Naledi Dlamini in Soweto 10km Fun Run
 GO
 select * from Users;
+
+-- SEED DATA - EventTypes and Users
+
+
+-- Insert Event Types (Run, Walk, Cycle)
+INSERT INTO EventTypes (TypeName) VALUES 
+('Run'),
+('Walk'),
+('Cycle');
+
+-- Insert Users (2 Organisers and 2 Participants)
+-- Note: Passwords are hashed - in production use proper password hashing like BCrypt
+INSERT INTO Users (FirstName, LastName, Email, PasswordHash, Role, PhoneNumber) VALUES
+('Thabo', 'Mokoena', 'thabo@raceday.co.za', '$2a$11$examplehash1organiser', 'Organiser', '0821112222'),
+('Sarah', 'Smith', 'sarah@raceday.co.za', '$2a$11$examplehash2organiser', 'Organiser', '0823334444'),
+('John', 'Doe', 'john.doe@email.com', '$2a$11$examplehash3participant', 'Participant', '0825556666'),
+('Naledi', 'Dlamini', 'naledi.dlamini@email.com', '$2a$11$examplehash4participant', 'Participant', '0827778888');
