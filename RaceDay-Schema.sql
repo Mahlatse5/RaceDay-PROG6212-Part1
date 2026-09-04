@@ -53,7 +53,7 @@ CREATE TABLE Enrolments (
     EventID INT NOT NULL,
     CategoryID INT NOT NULL,
     EnrolmentDate DATETIME DEFAULT GETDATE(),
-    Status VARCHAR(20) DEFAULT 'Confirmed' CHECK (Status IN ('Pending', 'Confirmed', 'Cancelled')),
+    Status VARCHAR(20) DEFAULT 'Confirmed' CHECK (Status IN ('Pending', 'Confirmed', 'Cancelled')), 
     FOREIGN KEY (ParticipantID) REFERENCES Users(UserID),
     FOREIGN KEY (EventID) REFERENCES Events(EventID),
     FOREIGN KEY (CategoryID) REFERENCES Categories(CategoryID)
