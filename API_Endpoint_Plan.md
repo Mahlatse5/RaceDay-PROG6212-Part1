@@ -28,5 +28,5 @@ This document outlines the RESTful API endpoints for the RaceDay Event Managemen
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **POST** | `/api/events/{eventId}/enrol` | Enrols the logged-in participant into an event and category. | Participant | `{ categoryId }` | **201 Created** - Enrolment record<br>**409 Conflict** - Already enrolled |
 | **GET** | `/api/users/enrolments` | Views the logged-in participant's personal enrolments. | Participant | None | **200 OK** - List of my enrolments |
-| **POST** | `/api/events/{eventId}/results` | Captures finish times and positions for participants. | Organiser | `[{ enrolmentId, finishTime, position }]` | **201 Created** - Results saved |
+| **POST** |  `/api/events/{eventId}/enrol` | ... | **201 Created** - Enrolment confirmed<br>**403 Forbidden** - User is not a Participant<br>**404 Not Found** - Event or category does not exist<br>**409 Conflict** - Already enrolled in this event |
 | **GET** | `/api/users/results` | Retrieves the logged-in participant's race history and results. | Participant | None | **200 OK** - List of results |
