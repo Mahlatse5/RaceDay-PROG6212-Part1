@@ -118,3 +118,31 @@ INSERT INTO Users (FirstName, LastName, Email, PasswordHash, Role, PhoneNumber) 
 ('Sarah', 'Smith', 'sarah@raceday.co.za', '$2a$11$examplehash2organiser', 'Organiser', '0823334444'),
 ('John', 'Doe', 'john.doe@email.com', '$2a$11$examplehash3participant', 'Participant', '0825556666'),
 ('Naledi', 'Dlamini', 'naledi.dlamini@email.com', '$2a$11$examplehash4participant', 'Participant', '0827778888');
+
+-- SEED DATA - Events and Categories
+
+-- Insert Events (3 Events)
+INSERT INTO Events (Name, Description, EventDate, Location, Distance, EventTypeID, OrganiserID) VALUES
+('Comrades Marathon 2026', 'The ultimate test of human endurance. An ultramarathon of approximately 89 km.', '2026-06-07 05:00:00', 'Pietermaritzburg to Durban', 89.00, 1, 1),
+('Cape Town Cycle Tour', 'Africa''s greatest cycling experience. A scenic route around the Cape Peninsula.', '2026-03-08 06:00:00', 'Cape Town CBD', 109.00, 3, 2),
+('Soweto Marathon', 'Celebrating community and fitness in the heart of Soweto.', '2026-05-17 06:00:00', 'Orlando Stadium, Soweto', 42.20, 1, 1);
+
+-- Insert Categories for Comrades Marathon (EventID = 1)
+INSERT INTO Categories (EventID, CategoryName, MinAge, MaxAge) VALUES
+(1, 'Open Men', 20, 99),
+(1, 'Open Women', 20, 99),
+(1, 'Veteran Men (40+)', 40, 99),
+(1, 'Veteran Women (40+)', 40, 99);
+
+-- Insert Categories for Cape Town Cycle Tour (EventID = 2)
+INSERT INTO Categories (EventID, CategoryName, MinAge, MaxAge) VALUES
+(2, 'Youth (Under 19)', 14, 18),
+(2, 'Senior Men', 19, 99),
+(2, 'Senior Women', 19, 99),
+(2, 'Gran Fondo (60+)', 60, 99);
+
+-- Insert Categories for Soweto Marathon (EventID = 3)
+INSERT INTO Categories (EventID, CategoryName, MinAge, MaxAge) VALUES
+(3, '10km Fun Run', 10, 99),
+(3, 'Half Marathon', 16, 99),
+(3, 'Full Marathon', 18, 99);
