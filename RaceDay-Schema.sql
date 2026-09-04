@@ -170,3 +170,48 @@ INSERT INTO Results (EnrolmentID, FinishTime, Position) VALUES
 -- Naledi finished 10km in 52:30, position 43
 INSERT INTO Results (EnrolmentID, FinishTime, Position) VALUES
 (2, '00:52:30', 43);
+
+-- VERIFICATION QUERIES
+-- Run these to verify the data was inserted correctly
+
+-- Verify all tables have data
+SELECT 'Users' as TableName, COUNT(*) as RecordCount FROM Users
+UNION ALL
+SELECT 'EventTypes', COUNT(*) FROM EventTypes
+UNION ALL
+SELECT 'Events', COUNT(*) FROM Events
+UNION ALL
+SELECT 'Categories', COUNT(*) FROM Categories
+UNION ALL
+SELECT 'Enrolments', COUNT(*) FROM Enrolments
+UNION ALL
+SELECT 'Results', COUNT(*) FROM Results;
+
+-- View all users
+SELECT UserID, FirstName, LastName, Email, Role FROM Users;
+
+-- View all events with their types
+SELECT e.EventID, e.Name, e.EventDate, e.Location, e.Distance, et.TypeName 
+FROM Events e
+JOIN EventTypes et ON e.EventTypeID = et.EventTypeID;
+
+-- View all enrolments with participant and event details
+SELECT u.FirstName + ' ' + u.LastName as Participant, 
+       e.Name as EventName, 
+       c.CategoryName, 
+       en.Status, 
+       en.EnrolmentDate
+FROM Enrolments en
+JOIN Users u ON en.ParticipantID = u.UserID
+JOIN Events e ON en.EventID = e.EventID
+JOIN Categories c ON en.CategoryID = c.CategoryID;
+
+-- View results with participant and event info
+SELECT u.FirstName + ' ' + u.LastName as Participant,
+       e.Name as EventName,
+       r.FinishTime,
+       r.Position
+FROM Results r
+JOIN Enrolments en ON r.EnrolmentID = en.EnrolmentID
+JOIN Users u ON en.ParticipantID = u.UserID
+JOIN Events e ON en.EventID = e.EventID;
