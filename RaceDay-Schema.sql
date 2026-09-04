@@ -146,3 +146,27 @@ INSERT INTO Categories (EventID, CategoryName, MinAge, MaxAge) VALUES
 (3, '10km Fun Run', 10, 99),
 (3, 'Half Marathon', 16, 99),
 (3, 'Full Marathon', 18, 99);
+
+-- SEED DATA - Enrolments and Results
+
+-- Insert Enrolments (Sample enrolments for Participants)
+-- John Doe (UserID=3) enrols in Comrades Marathon Open Men (CategoryID=1)
+INSERT INTO Enrolments (ParticipantID, EventID, CategoryID, Status) VALUES
+(3, 1, 1, 'Confirmed');
+
+-- Naledi Dlamini (UserID=4) enrols in Soweto 10km Fun Run (CategoryID=9)
+INSERT INTO Enrolments (ParticipantID, EventID, CategoryID, Status) VALUES
+(4, 3, 9, 'Confirmed');
+
+-- John Doe also enters Soweto Half Marathon (CategoryID=10) - Pending
+INSERT INTO Enrolments (ParticipantID, EventID, CategoryID, Status) VALUES
+(3, 3, 10, 'Pending');
+
+-- Insert Results (Sample results for completed events)
+-- John Doe finished Comrades in 4:32:15, position 127
+INSERT INTO Results (EnrolmentID, FinishTime, Position) VALUES
+(1, '04:32:15', 127);
+
+-- Naledi finished 10km in 52:30, position 43
+INSERT INTO Results (EnrolmentID, FinishTime, Position) VALUES
+(2, '00:52:30', 43);
