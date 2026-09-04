@@ -1,22 +1,25 @@
-# RaceDay Event Management System
+## RaceDay Event Management System
 
 ## System Description
-RaceDay is a full-stack web-based event management system designed for the South African road running, walking, and cycling community. The platform allows Event Organisers to create and manage events, categories, and participant results, while Participants can browse upcoming events, enter events, track their personal performance history, and prepare for race day.
+RaceDay is a full-stack web-based event management system designed specifically for the South African road running, walking, and cycling community. The platform streamlines the event lifecycle, allowing Organisers to efficiently manage events, categories, and participant results, while enabling Participants to browse upcoming events, enter races, and track their personal performance history.
 
 ## User Roles
+The system enforces strict role-based access control for two distinct user types:
 
-### Organiser
-- Can create, edit, and delete events
-- Manage event categories
-- Capture participant results
-- View all event enrolments
+## 1. Organiser
+Organisers are responsible for the creation and management of events. Their permissions include:
+* Creating, editing, and deleting events.
+* Managing event categories (e.g., age groups, distances).
+* Capturing and publishing participant results (finish times and positions).
+* Viewing all participant enrolments for their events.
 
-### Participant
-- Can create an account
-- Browse events
-- Enter an event by selecting a category
-- View their own enrolments
-- Track their personal results
+### 2. Participant
+Participants are the end-users who engage with the events. Their permissions include:
+* Creating a personal account and managing their profile.
+* Browsing upcoming events and filtering by type.
+* Entering an event by selecting a specific category.
+* Viewing their personal enrolment status.
+* Tracking their personal race history and viewing their official results.
 
 ## Part 1 Deliverables
 All planning documents are located in the `/docs` folder:
