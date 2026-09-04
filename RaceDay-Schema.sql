@@ -30,7 +30,7 @@ CREATE TABLE Events (
     Description VARCHAR(500) NULL,
     EventDate DATETIME NOT NULL,
     Location VARCHAR(100) NOT NULL,
-    Distance DECIMAL(5,2) NOT NULL,
+    Distance DECIMAL(5,2) NOT NULL, CHECK (Distance > 0),
     EventTypeID INT NOT NULL,
     OrganiserID INT NOT NULL,
     BannerImageUrl VARCHAR(255) NULL,
