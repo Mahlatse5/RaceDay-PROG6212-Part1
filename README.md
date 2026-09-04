@@ -21,17 +21,13 @@ Participants are the end-users who engage with the events. Their permissions inc
 * Viewing their personal enrolment status.
 * Tracking their personal race history and viewing their official results.
 
-## Part 1 Deliverables
-All planning documents are located in the `/docs` folder:
-- ERD Diagram (`ERD_RaceDay.png`)
-- API Endpoint Plan (`API_Endpoint_Plan.md`)
-- SQL Database Script (`RaceDay_Schema.sql`)
+## Setup Instructions (How to Run the Database)
 
-## CI/CD Build Status
-![CI/CD Build](docs/ci-cd-screenshot.png)
+To set up the RaceDay database locally, follow these steps:
 
-## Video Presentation
-[Watch Part 1 Video Presentation](YOUR_YOUTUBE_LINK_HERE)
-
-## AI Usage Disclosure
-AI tools were used to assist with planning and structuring the database schema, generating API endpoint table templates, and drafting GitHub Actions workflow. All ERD design, SQL script testing, documentation, and video presentation were completed independently by the student.
+1. Ensure you have **SQL Server Management Studio (SSMS)** installed and connected to your local SQL Server instance.
+2. Navigate to the `/docs` folder in this repository.
+3. Open the `RaceDay_Schema.sql` file.
+4. Copy the entire contents of the script and paste it into a **New Query** window in SSMS.
+5. Click **Execute** (or press F5). The script will automatically create the `RaceDayDB` database, all required tables, constraints, and seed the database with realistic sample data.
+6. To verify the setup, expand the `RaceDayDB` database in the Object Explorer, right-click on the `dbo.Users` table, and select **Select Top 1000 Rows** to view the seeded Organisers and Participants.
